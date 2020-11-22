@@ -1,5 +1,17 @@
 # misc
 .DS_Store
 
-# node
+# env
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+
+# build
+/client/build
+
+# node & yarn
 node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
