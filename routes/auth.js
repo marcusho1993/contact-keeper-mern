@@ -3,6 +3,10 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const jwtSecret = config.get('jwtSecret');
+if (process.env.NODE_ENV === 'production') {
+  jwtSecret = process.env.jwtSecret;
+}
 const auth = require('../middleware/auth');
 const { check, validationResult } = require('express-validator/check');
 
