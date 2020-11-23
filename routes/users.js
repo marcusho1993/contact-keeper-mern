@@ -3,9 +3,11 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const jwtSecret = config.get('jwtSecret');
+let jwtSecret;
 if (process.env.NODE_ENV === 'production') {
   jwtSecret = process.env.jwtSecret;
+} else {
+  jwtSecret = config.get('jwtSecret');
 }
 const { check, validationResult } = require('express-validator/check');
 
